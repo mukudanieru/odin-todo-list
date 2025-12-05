@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
     <head>
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -7,8 +7,82 @@
         <link rel="stylesheet" href="src/css/style.css" />
         <title>Odin Todo</title>
     </head>
-    <body>
-        <h1 class="text-blue-950">Hello, World!</h1>
+    <body
+        class="flex flex-col min-h-screen font-display bg-primary dark:bg-primary-dark"
+    >
+        <header
+            class="flex justify-between px-3 py-3 border-b border-muted dark:border-muted-dark"
+        >
+            <button
+                class="btn-outline size-8 bg-primary text-dark border-muted"
+            >
+                E
+            </button>
+
+            <button
+                id="theme-toggle"
+                class="btn-icon-outline size-8 bg-primary border-muted hover:opacity-65 dark:bg-primary-dark dark:border-muted-dark"
+            >
+                <span class="text-primary hidden dark:block">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 2v2" />
+                        <path d="M12 20v2" />
+                        <path d="m4.93 4.93 1.41 1.41" />
+                        <path d="m17.66 17.66 1.41 1.41" />
+                        <path d="M2 12h2" />
+                        <path d="M20 12h2" />
+                        <path d="m6.34 17.66-1.41 1.41" />
+                        <path d="m19.07 4.93-1.41 1.41" />
+                    </svg>
+                </span>
+                <span class="text-primary-dark block dark:hidden">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                    </svg>
+                </span>
+            </button>
+        </header>
+
+        <main class="flex-1">main</main>
+
+        <footer
+            class="flex justify-center items-center py-2 px-4 h-9 leading-0"
+        >
+            <span
+                class="flex items-center text-base font-medium text-primary-dark dark:text-primary"
+            >
+                Created by&nbsp;
+                <a
+                    class="transition-colors duration-150 hover:text-muted-dark dark:hover:text-muted"
+                    href="https://github.com/mukudanieru"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >mukudanieru</a
+                >
+            </span>
+        </footer>
+
         <script type="module" src="/src/js/main.js"></script>
     </body>
 </html>

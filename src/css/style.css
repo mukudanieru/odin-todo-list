@@ -1,1 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
+@import "basecoat-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-display: "Outfit", sans-serif;
+
+    --color-primary: #e9ecef;
+    --color-primary-dark: #343a40;
+
+    --color-secondary: #dee2e6;
+    --color-secondary-dark: #495057;
+
+    --color-muted: #ced4da;
+    --color-muted-dark: #6c757d;
+
+    --color-light: #f8f9fa;
+    --color-dark: #212529;
+}
