@@ -19,3 +19,25 @@
     --color-light: #f8f9fa;
     --color-dark: #212529;
 }
+
+body {
+    display: grid;
+    grid-template-columns: 250px 2fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+    overflow: hidden;
+}
+
+.page-sidebar {
+    grid-area: sidebar;
+}
+
+.page-header {
+    grid-area: header;
+}
+
+.page-main {
+    grid-area: main;
+}
