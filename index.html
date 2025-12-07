@@ -10,11 +10,64 @@
 
     <body class="bg-primary dark:bg-primary-dark min-h-screen font-display">
         <aside class="page-sidebar bg-secondary dark:bg-secondary-dark">
-            test
+            <div class="flex flex-col p-2 h-full">
+                <header class="bg-transparent cursor-default p-1.5">
+                    <div
+                        class="flex flex-row items-center gap-3 p-2 h-8 rounded-md bg-transparent cursor-pointer hover:bg-muted dark:hover:bg-muted-dark transition-colors"
+                    >
+                        <svg
+                            class="size-4 text-primary-dark dark:text-primary"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-check-check-icon lucide-check-check"
+                        >
+                            <path d="M18 6 7 17l-5-5" />
+                            <path d="m22 10-7.5 7.5L13 16" />
+                        </svg>
+
+                        <span
+                            class="text-base font-semibold text-primary-dark dark:text-primary"
+                            >Odin Todo</span
+                        >
+                    </div>
+                </header>
+
+                <main class="flex-1 p-2">
+                    <div class="flex flex-col">
+                        <button
+                            class="flex items-center p-2 gap-1.5 rounded-md bg-dark dark:bg-light h-8 w-full hover:opacity-90 cursor-pointer transition-all duration-200 ease-linear"
+                        >
+                            <svg
+                                class="text-light dark:text-dark size-4"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                stroke="none"
+                                class="tabler-icon tabler-icon-circle-plus-filled"
+                            >
+                                <path
+                                    d="M4.929 4.929a10 10 0 1 1 14.141 14.141a10 10 0 0 1 -14.14 -14.14zm8.071 4.071a1 1 0 1 0 -2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0v-2h2a1 1 0 1 0 0 -2h-2v-2z"
+                                ></path>
+                            </svg>
+
+                            <span class="text-light dark:text-dark text-sm"
+                                >Create Task</span
+                            >
+                        </button>
+                    </div>
+
+                    <div></div>
+                </main>
+            </div>
         </aside>
 
         <header
-            class="page-header flex justify-between px-3 py-3 border-b border-muted dark:border-muted-dark"
+            class="page-header flex justify-between p-3 border-b border-muted dark:border-muted-dark"
         >
             <button
                 class="btn-sm-icon-ghost size-7 bg-transparent hover:bg-muted dark:hover:bg-muted-dark transition-colors"
@@ -22,8 +75,6 @@
                 <span class="text-primary-dark dark:text-primary">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -39,7 +90,7 @@
 
             <div class="flex justify-center items-center gap-4">
                 <a
-                    class="btn-sm-icon-ghost size-8 bg-transparent hover:bg-muted dark:hover:bg-muted-dark transition-colors"
+                    class="btn-sm-icon-ghost size-6 bg-transparent hover:bg-muted dark:hover:bg-muted-dark transition-colors"
                     href="https://github.com/mukudanieru"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -56,7 +107,7 @@
 
                 <button
                     id="theme-toggle"
-                    class="btn-icon-outline size-8 bg-primary border-muted hover:opacity-65 dark:bg-primary-dark dark:border-muted-dark"
+                    class="btn-icon-outline size-7 bg-primary border-muted hover:opacity-65 dark:bg-primary-dark dark:border-muted-dark"
                 >
                     <span class="text-primary hidden dark:block">
                         <svg
@@ -81,6 +132,7 @@
                             <path d="m19.07 4.93-1.41 1.41" />
                         </svg>
                     </span>
+
                     <span class="text-primary-dark block dark:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
