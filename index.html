@@ -32,13 +32,13 @@
 
                         <span
                             class="text-base font-semibold text-primary-dark dark:text-primary"
-                            >Odin Todo</span
-                        >
+                            >Odin Todo
+                        </span>
                     </div>
                 </header>
 
-                <main class="flex-1 p-2">
-                    <div class="flex flex-col">
+                <main class="flex-1">
+                    <div class="flex flex-col p-2">
                         <button
                             class="flex items-center p-2 gap-1.5 rounded-md bg-dark dark:bg-light h-8 w-full hover:opacity-90 cursor-pointer transition-all duration-200 ease-linear"
                         >
@@ -56,12 +56,73 @@
                             </svg>
 
                             <span class="text-light dark:text-dark text-sm"
-                                >Create Task</span
-                            >
+                                >Create Task
+                            </span>
                         </button>
                     </div>
 
-                    <div></div>
+                    <div class="flex flex-col p-2 gap-2">
+                        <span
+                            class="px-2 text-sm h-8 text-secondary-dark dark:text-secondary"
+                            >Lists</span
+                        >
+
+                        <div class="flex flex-col">
+                            <button
+                                class="flex justify-start items-center p-2 text-sm h-8 rounded-md bg-transparent text-dark dark:text-light cursor-pointer hover:bg-muted dark:hover:bg-muted-dark transition-colors"
+                            >
+                                Personal
+                            </button>
+                            <button
+                                class="flex justify-start items-center p-2 text-sm h-8 rounded-md bg-transparent text-dark dark:text-light cursor-pointer hover:bg-muted dark:hover:bg-muted-dark transition-colors"
+                            >
+                                Home & Household
+                            </button>
+                            <button
+                                class="flex justify-start items-center p-2 text-sm h-8 rounded-md bg-transparent text-dark dark:text-light cursor-pointer hover:bg-muted dark:hover:bg-muted-dark transition-colors"
+                            >
+                                Work / Professional
+                            </button>
+                            <button
+                                class="flex justify-start items-center p-2 text-sm h-8 rounded-md bg-transparent text-dark dark:text-light cursor-pointer hover:bg-muted dark:hover:bg-muted-dark transition-colors"
+                            >
+                                School
+                            </button>
+                            <button
+                                class="flex justify-start items-center p-2 text-sm h-8 rounded-md bg-transparent text-dark dark:text-light cursor-pointer hover:bg-muted dark:hover:bg-muted-dark transition-colors"
+                            >
+                                Learning
+                            </button>
+                        </div>
+
+                        <button
+                            class="flex justify-start btn-outline h-8 bg-primary border-muted hover:opacity-65 dark:bg-primary-dark dark:border-muted-dark"
+                        >
+                            <svg
+                                class="text-dark dark:text-light size-4"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-list-plus-icon lucide-list-plus"
+                            >
+                                <path d="M16 5H3" />
+                                <path d="M11 12H3" />
+                                <path d="M16 19H3" />
+                                <path d="M18 9v6" />
+                                <path d="M21 12h-6" />
+                            </svg>
+
+                            <span class="text-dark dark:text-light text-sm"
+                                >Create List
+                            </span>
+                        </button>
+                    </div>
                 </main>
             </div>
         </aside>
@@ -70,6 +131,7 @@
             class="page-header flex justify-between p-3 border-b border-muted dark:border-muted-dark"
         >
             <button
+                id="sidebar-toggle"
                 class="btn-sm-icon-ghost size-7 bg-transparent hover:bg-muted dark:hover:bg-muted-dark transition-colors"
             >
                 <span class="text-primary-dark dark:text-primary">
