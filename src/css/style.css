@@ -37,7 +37,7 @@ body.sidebar-closed {
 .page-sidebar {
     grid-area: sidebar;
     overflow: hidden;
-    transition: left 0.3s ease;
+    transition: left 0.5s ease;
 }
 
 .page-header {
