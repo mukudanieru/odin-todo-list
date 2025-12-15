@@ -1,23 +1,23 @@
 export default function Task({
     id = crypto.randomUUID(),
+    projectID,
     title,
     description,
     dueDate = null,
     priority,
     completed = false,
-    listId,
 }) {
     let _completed = completed;
     let _title = title;
     let _description = description;
 
     return {
-        getId: () => id,
+        getID: () => id,
+        getProjectID: () => projectID,
         getTitle: () => _title,
         getDescription: () => _description,
         getDueDate: () => dueDate,
         getPriority: () => priority,
-        getListId: () => listId,
         isCompleted: () => _completed,
 
         setTitle(newTitle) {

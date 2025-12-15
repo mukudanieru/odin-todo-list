@@ -1,22 +1,12 @@
-export default function Project({
-    id = crypto.randomUUID(),
-    name,
-    tasks = [],
-}) {
+export default function Project({ id = crypto.randomUUID(), name }) {
     let _name = name;
-    let _tasks = [...tasks];
 
     return {
-        getId: () => id,
+        getID: () => id,
         getName: () => _name,
-        getTasks: () => [..._tasks],
 
-        addTask(task) {
-            _tasks.push(task);
-        },
-
-        removeTask(taskId) {
-            _tasks = _tasks.filter((task) => task.getId() !== taskId);
+        setTitle(newTitle) {
+            _title = newTitle;
         },
     };
 }
