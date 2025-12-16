@@ -27,7 +27,6 @@ body {
     grid-template-areas:
         "sidebar header"
         "sidebar main";
-    overflow: hidden;
 }
 
 body.sidebar-closed {
@@ -36,7 +35,7 @@ body.sidebar-closed {
 
 .page-sidebar {
     grid-area: sidebar;
-    overflow: hidden;
+    overflow-y: auto;
     transition: left 0.5s ease;
 }
 
@@ -46,6 +45,7 @@ body.sidebar-closed {
 
 .page-main {
     grid-area: main;
+    overflow-y: auto;
 }
 
 @media (max-width: 768px) {

@@ -8,7 +8,9 @@
         <title>Odin Todo</title>
     </head>
 
-    <body class="bg-primary dark:bg-primary-dark min-h-screen font-display">
+    <body
+        class="bg-primary dark:bg-primary-dark h-screen min-h-screen font-display"
+    >
         <aside class="page-sidebar bg-secondary dark:bg-secondary-dark">
             <div class="flex flex-col p-2 h-full">
                 <header class="bg-transparent cursor-default p-1.5">
@@ -128,7 +130,7 @@
         </aside>
 
         <header
-            class="page-header flex justify-between p-3 border-l border-b border-muted dark:border-muted-dark"
+            class="page-header flex justify-between p-3 md:border-l border-b border-muted dark:border-muted-dark"
         >
             <button
                 id="sidebar-toggle"
@@ -215,8 +217,154 @@
         </header>
 
         <main
-            class="page-main border-l border-muted dark:border-muted-dark"
-        ></main>
+            class="page-main flex items-center justify-center md:border-l border-muted dark:border-muted-dark"
+        >
+            <div class="flex flex-col gap-5 m-10 w-full max-w-4xl">
+                <header class="flex flex-col gap-5">
+                    <div class="flex flex-col gap-2.5">
+                        <h1
+                            class="text-5xl font-bold text-dark dark:text-light"
+                        >
+                            Work / Professional
+                        </h1>
+                        <span
+                            class="text-base font-medium text-dark dark:text-light"
+                            >2 of 5 tasks completed</span
+                        >
+                    </div>
+                    <div
+                        class="bg-primary-dark/20 dark:bg-primary/20 relative h-2 w-full overflow-hidden rounded-full"
+                    >
+                        <div
+                            id="demo-progress"
+                            class="bg-primary-dark dark:bg-primary h-full w-full flex-1 transition-all"
+                            style="width: 17%"
+                        ></div>
+                    </div>
+                </header>
+
+                <section
+                    class="card flex flex-col gap-0 p-0 bg-light border-primary dark:bg-dark dark:border-primary-dark"
+                >
+                    <div
+                        class="flex gap-3 p-4 border-b border-primary dark:border-primary-dark"
+                    >
+                        <!-- border-b border-primary dark:border-primary-dark if not the last -->
+                        <input
+                            type="checkbox"
+                            class="input border-secondary checked:bg-primary-dark dark:border-secondary-dark"
+                        />
+
+                        <div class="flex flex-col gap-3 md:gap-1 w-full">
+                            <div class="flex justify-between">
+                                <h1
+                                    class="leading-none text-base font-semibold text-primary-dark dark:text-primary"
+                                >
+                                    Set up development environment
+                                </h1>
+
+                                <span
+                                    class="badge text-red-600 bg-red-50 border-red-300 dark:text-red-400 dark:bg-red-950/30 dark:border-red-900"
+                                    >High</span
+                                >
+                            </div>
+
+                            <span
+                                class="text-sm font-medium text-secondary-dark dark:text-secondary"
+                            >
+                                Configure Next.js project with TypeScript and
+                                Tailwind CSS
+                            </span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex gap-3 p-4 border-b border-primary dark:border-primary-dark"
+                    >
+                        <!-- border-b border-primary dark:border-primary-dark if not the last -->
+                        <input
+                            type="checkbox"
+                            class="input border-secondary checked:bg-primary-dark dark:border-secondary-dark"
+                        />
+
+                        <div class="flex flex-col gap-3 md:gap-1 w-full">
+                            <div class="flex justify-between">
+                                <h1
+                                    class="leading-none text-base font-semibold text-primary-dark dark:text-primary"
+                                >
+                                    Design landing page mockups
+                                </h1>
+
+                                <span
+                                    class="badge text-amber-600 bg-amber-50 border-amber-200 dark:bg-amber-950/30 dark:text-amber-400 dark:border-amber-900"
+                                    >Medium</span
+                                >
+                            </div>
+
+                            <span
+                                class="text-sm font-medium text-secondary-dark dark:text-secondary"
+                                >Create high-fidelity mockups for the new
+                                landing page with updated branding
+                            </span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex gap-3 p-4 border-b border-primary dark:border-primary-dark"
+                    >
+                        <!-- border-b border-primary dark:border-primary-dark if not the last -->
+                        <input
+                            type="checkbox"
+                            class="input border-secondary checked:bg-primary-dark dark:border-secondary-dark"
+                        />
+
+                        <div class="flex flex-col gap-3 md:gap-1 w-full">
+                            <div class="flex justify-between">
+                                <h1
+                                    class="leading-none text-base font-semibold text-primary-dark dark:text-primary"
+                                >
+                                    Design landing page mockups
+                                </h1>
+
+                                <span
+                                    class="badge text-blue-600 bg-blue-50 border-blue-200 dark:bg-blue-950/30 dark:text-blue-400 dark:border-blue-900"
+                                    >Low</span
+                                >
+                            </div>
+
+                            <span
+                                class="text-sm font-medium text-secondary-dark dark:text-secondary"
+                                >Create high-fidelity mockups for the new
+                                landing page with updated branding
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="flex p-2">
+                        <button
+                            class="flex w-full p-1.5 items-center gap-1.5 rounded-md hover:cursor-pointer hover:bg-muted dark:hover:bg-muted-dark transition-colors"
+                        >
+                            <svg
+                                class="text-dark dark:text-light size-4"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                stroke="none"
+                                class="tabler-icon tabler-icon-circle-plus-filled"
+                            >
+                                <path
+                                    d="M4.929 4.929a10 10 0 1 1 14.141 14.141a10 10 0 0 1 -14.14 -14.14zm8.071 4.071a1 1 0 1 0 -2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 1 0 2 0v-2h2a1 1 0 1 0 0 -2h-2v-2z"
+                                ></path>
+                            </svg>
+
+                            <span class="text-dark dark:text-light text-sm"
+                                >Add a Task
+                            </span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </main>
 
         <script type="module" src="/src/js/main.js"></script>
     </body>

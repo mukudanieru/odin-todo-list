@@ -7,3 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     themeToggle();
     sidebarEvents();
 });
+
+setTimeout(() => {
+    document.getElementById("demo-progress").style.width = `${(2 / 5) * 100}%`;
+}, 500);
