@@ -63,42 +63,19 @@
             </button>
           </div>
 
-          <div class="flex flex-col p-2 gap-1">
+          <div class="flex flex-col p-2 gap-2">
             <span
               class="px-2 text-sm h-6 text-secondary-dark dark:text-secondary"
               >Projects</span
             >
 
-            <div class="flex flex-col" id="project-list">
-              <button
-                class="flex justify-start items-center p-2 text-sm h-8 rounded-md bg-transparent text-dark dark:text-light cursor-pointer hover:bg-muted dark:hover:bg-muted-dark transition-colors"
-              >
-                Personal
-              </button>
-              <button
-                class="flex justify-start items-center p-2 text-sm h-8 rounded-md bg-transparent text-dark dark:text-light cursor-pointer hover:bg-muted dark:hover:bg-muted-dark transition-colors"
-              >
-                Home & Household
-              </button>
-              <button
-                class="flex justify-start items-center p-2 text-sm h-8 rounded-md bg-transparent text-dark dark:text-light cursor-pointer hover:bg-muted dark:hover:bg-muted-dark transition-colors"
-              >
-                Work / Professional
-              </button>
-              <button
-                class="flex justify-start items-center p-2 text-sm h-8 rounded-md bg-transparent text-dark dark:text-light cursor-pointer hover:bg-muted dark:hover:bg-muted-dark transition-colors"
-              >
-                School
-              </button>
-              <button
-                class="flex justify-start items-center p-2 text-sm h-8 rounded-md bg-transparent text-dark dark:text-light cursor-pointer hover:bg-muted dark:hover:bg-muted-dark transition-colors"
-              >
-                Learning
-              </button>
+            <div class="flex flex-col" id="project-container">
+              <!-- PROJECT COMPONENT HERE! -->
             </div>
 
             <button
               class="flex justify-start btn-outline h-8 bg-primary border-muted hover:opacity-65 dark:bg-primary-dark dark:border-muted-dark"
+              onclick="document.getElementById('create-project').showModal()"
             >
               <svg
                 class="text-dark dark:text-light size-4"
@@ -121,7 +98,7 @@
               </svg>
 
               <span class="text-dark dark:text-light text-sm"
-                >Create List
+                >Create Project
               </span>
             </button>
           </div>
@@ -363,6 +340,42 @@
         </div>
       </div>
     </main>
+
+    <dialog id="create-project" class="dialog">
+      <div
+        class="bg-secondary dark:bg-secondary-dark border-muted dark:border-muted-dark"
+      >
+        <form id="project-form-submission" class="flex flex-col gap-2">
+          <div class="flex flex-col gap-3">
+            <label for="name">Project Name:</label>
+            <input
+              class="input text-dark dark:text-primary placeholder-primary-dark dark:placeholderbg-primary border-muted dark:border-muted-dark selection:bg-dark/50 dark:selection:bg-light/50 selection:text-light dark:selection:text-dark"
+              type="text"
+              id="name"
+              placeholder="Work or Professional"
+            />
+          </div>
+
+          <div class="flex justify-end gap-2">
+            <button
+              class="btn-sm-outline bg-primary dark:bg-primary-dark border-muted dark:border-muted-dark hover:opacity-65"
+              onclick="this.closest('dialog').close()"
+              type="button"
+            >
+              <span class="text-sm text-dark dark:text-light">Cancel</span>
+            </button>
+
+            <button
+              class="btn-sm-outline bg-dark dark:bg-light border-muted-dark dark:border-muted"
+              onclick="this.closest('dialog').close()"
+              type="submit"
+            >
+              <span class="text-sm text-light dark:text-dark">Submit</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </dialog>
 
     <script type="module" src="/src/ts/main.ts"></script>
   </body>
