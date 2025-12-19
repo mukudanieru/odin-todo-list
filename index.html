@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/css/style.css" />
     <title>Odin Todo</title>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.7/dist/js/basecoat.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/basecoat-css@0.3.7/dist/js/dropdown-menu.min.js"
+      defer
+    ></script>
   </head>
 
   <body
@@ -200,9 +209,68 @@
         <div class="flex flex-col gap-5 w-full max-w-4xl">
           <header class="flex flex-col gap-5">
             <div class="flex flex-col gap-2.5">
-              <h1 class="text-5xl font-bold text-dark dark:text-light">
-                Work / Professional
-              </h1>
+              <div class="flex justify-between">
+                <h1 class="text-5xl font-bold text-dark dark:text-light">
+                  Work / Professional
+                </h1>
+
+                <div id="project-dropdown-menu" class="dropdown-menu self-end">
+                  <!-- TRIGGER -->
+                  <button
+                    type="button"
+                    id="project-dropdown-menu-trigger"
+                    aria-haspopup="menu"
+                    aria-controls="project-dropdown-menu-menu"
+                    aria-expanded="false"
+                    class="flex justify-center items-center size-3.5"
+                  >
+                    <svg
+                      class="size-3.5 text-dark dark:text-light"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical"
+                    >
+                      <circle cx="12" cy="12" r="1" />
+                      <circle cx="12" cy="5" r="1" />
+                      <circle cx="12" cy="19" r="1" />
+                    </svg>
+                  </button>
+
+                  <!-- POPOVER -->
+                  <div
+                    class="bg-light dark:bg-dark border-primary dark:border-primary-dark"
+                    id="project-dropdown-menu-popover"
+                    data-popover
+                    aria-hidden="true"
+                    data-side="left"
+                  >
+                    <div
+                      class="text-primary-dark"
+                      role="menu"
+                      id="project-dropdown-menu-menu"
+                      aria-labelledby="project-dropdown-menu-trigger"
+                    >
+                      <div
+                        class="dark:text-primary hover:bg-muted/65 hover:dark:bg-muted-dark/65"
+                        role="menuitem"
+                      >
+                        Edit
+                      </div>
+                      <div
+                        class="dark:text-primary hover:bg-muted/65 hover:dark:bg-muted-dark/65"
+                        role="menuitem"
+                      >
+                        Delete
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <span class="text-base font-medium text-dark dark:text-light"
                 >2 of 5 tasks completed</span
               >
@@ -346,8 +414,12 @@
         class="bg-secondary dark:bg-secondary-dark border-muted dark:border-muted-dark"
       >
         <form id="project-form-submission" class="flex flex-col gap-2">
-          <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-2.5">
             <label for="name">Project Name:</label>
+            <div
+              id="error-message"
+              class="hidden text-sm text-red-600 dark:text-red-400 leading-none"
+            ></div>
             <input
               class="input text-dark dark:text-primary placeholder-primary-dark dark:placeholderbg-primary border-muted dark:border-muted-dark selection:bg-dark/50 dark:selection:bg-light/50 selection:text-light dark:selection:text-dark"
               type="text"
@@ -359,7 +431,7 @@
           <div class="flex justify-end gap-2">
             <button
               class="btn-sm-outline bg-primary dark:bg-primary-dark border-muted dark:border-muted-dark hover:opacity-65"
-              onclick="this.closest('dialog').close()"
+              id="cancel-create-project"
               type="button"
             >
               <span class="text-sm text-dark dark:text-light">Cancel</span>
@@ -367,7 +439,6 @@
 
             <button
               class="btn-sm-outline bg-dark dark:bg-light border-muted-dark dark:border-muted"
-              onclick="this.closest('dialog').close()"
               type="submit"
             >
               <span class="text-sm text-light dark:text-dark">Submit</span>
