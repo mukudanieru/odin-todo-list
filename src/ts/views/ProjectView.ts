@@ -16,6 +16,7 @@ function projectComponent(projectObject: ProjectInstance): HTMLButtonElement {
   button.className =
     "flex justify-start items-center p-2 text-sm h-8 rounded-md bg-transparent text-dark dark:text-light cursor-pointer hover:bg-muted dark:hover:bg-muted-dark transition-colors";
 
+  button.id = "project";
   button.dataset.id = projectObject.getID();
   button.textContent = projectObject.getName();
 

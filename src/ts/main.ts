@@ -1,7 +1,7 @@
 import { initTheme, themeToggle } from "./ui/themeEvents.ts";
 import { sidebarEvents } from "./ui/sidebarEvents.ts";
 import "basecoat-css/all";
-import ProjectController from "./controllers/ProjectController.ts";
+import Controller from "./controllers/Controller.ts";
 
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
@@ -9,9 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
   sidebarEvents();
 });
 
-setTimeout(() => {
-  document.getElementById("demo-progress").style.width = `${(2 / 5) * 100}%`;
-}, 500);
+// setTimeout(() => {
+//   document.getElementById("demo-progress").style.width = `${(2 / 5) * 100}%`;
+// }, 500);
 
-const projectController = ProjectController();
+const projectController = Controller();
+projectController.handleProjectEvent();
 projectController.handleProjectFormSubmission();

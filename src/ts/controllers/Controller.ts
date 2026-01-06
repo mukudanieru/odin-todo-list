@@ -1,15 +1,43 @@
-import Project from "../models/Project.ts";
+import Project, { type ProjectInstance } from "../models/Project.ts";
 import ProjectRepository from "../services/ProjectRepository.ts";
+import TaskRepository from "../services/TaskRepository.ts";
 import ProjectView from "../views/ProjectView.ts";
+import TaskView from "../views/TaskView.ts";
 
-export default function ProjectController() {
+export default function Controller() {
   const projectRepository = ProjectRepository();
+  const taskRepository = TaskRepository();
+
   const projectView = ProjectView();
+  const taskView = TaskView();
 
   // Initial Rendering
   projectView.render(projectRepository.getAll());
 
   return {
+    handleProjectEvent() {
+      const projectContainer =
+        document.querySelector<HTMLDivElement>("#project-container");
+
+      projectContainer?.addEventListener("click", (e) => {
+        const eventClicked = e.target as HTMLDivElement;
+
+        if (eventClicked.id === "project") {
+          const projectClicked = eventClicked.dataset.id;
+          if (!projectClicked) return;
+
+          const projectFound = projectRepository.findByID(projectClicked);
+          if (!projectFound) return;
+
+          const tasksFound = taskRepository.getByProjectID(
+            projectFound.getID()
+          );
+
+          taskView.renderHeader(projectFound, tasksFound);
+        }
+      });
+    },
+
     handleProjectFormSubmission() {
       const projectFormSubmission = document.querySelector<HTMLFormElement>(
         "#project-form-submission"
